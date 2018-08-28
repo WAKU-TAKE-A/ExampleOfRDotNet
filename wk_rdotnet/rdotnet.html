@@ -1,0 +1,109 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: package rdotnet</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rdotnet</strong></big></big> (version 0.9.2.0, 2018/8/28)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c:\program files\ironpython 2.7\lib\rdotnet\__init__.py">c:\program files\ironpython 2.7\lib\rdotnet\__init__.py</a></font></td></tr></table>
+    <p><tt>wk_rdotnet.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-asCharacter"><strong>asCharacter</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asCharacterMatrix"><strong>asCharacterMatrix</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asComplex"><strong>asComplex</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asComplexMatrix"><strong>asComplexMatrix</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asDataFrame"><strong>asDataFrame</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asEnvironment"><strong>asEnvironment</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asExpression"><strong>asExpression</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asFactor"><strong>asFactor</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asFunction"><strong>asFunction</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asInteger"><strong>asInteger</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asIntegerMatrix"><strong>asIntegerMatrix</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asLanguage"><strong>asLanguage</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asList"><strong>asList</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asLogical"><strong>asLogical</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asLogicalMatrix"><strong>asLogicalMatrix</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asNumeric"><strong>asNumeric</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asNumericMatrix"><strong>asNumericMatrix</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asRaw"><strong>asRaw</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asRawMatrix"><strong>asRawMatrix</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asS4"><strong>asS4</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asSymbol"><strong>asSymbol</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-asVector"><strong>asVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-convert"><strong>convert</strong></a>(var, type)</dt><dd><tt>Get&nbsp;the&nbsp;expression&nbsp;as&nbsp;the&nbsp;given&nbsp;type.<br>
+&nbsp;<br>
+var&nbsp;:&nbsp;The&nbsp;expression.<br>
+type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
+retuen&nbsp;:&nbsp;The&nbsp;converted&nbsp;expression.</tt></dd></dl>
+ <dl><dt><a name="-createCharacterVector"><strong>createCharacterVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-createComplexVector"><strong>createComplexVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-createIntegerVector"><strong>createIntegerVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-createLogicalVector"><strong>createLogicalVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-createNumericVector"><strong>createNumericVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-createRawVector"><strong>createRawVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-eval"><strong>eval</strong></a>(cmd, type<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-evaluate"><strong>evaluate</strong></a>(cmd, type<font color="#909090">=None</font>)</dt><dd><tt>Evaluates&nbsp;a&nbsp;statement&nbsp;in&nbsp;the&nbsp;given&nbsp;stream.<br>
+&nbsp;<br>
+cmd&nbsp;:&nbsp;The&nbsp;given&nbsp;string.<br>
+type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
+return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
+ <dl><dt><a name="-getSymbol"><strong>getSymbol</strong></a>(name, type<font color="#909090">=None</font>)</dt><dd><tt>Gets&nbsp;a&nbsp;symbol&nbsp;defined&nbsp;in&nbsp;the&nbsp;global&nbsp;environment.<br>
+&nbsp;<br>
+name&nbsp;:&nbsp;The&nbsp;name.<br>
+type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
+return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
+ <dl><dt><a name="-isDataFrame"><strong>isDataFrame</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isEnvironment"><strong>isEnvironment</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isExpression"><strong>isExpression</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isFactor"><strong>isFactor</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isFunction"><strong>isFunction</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isLanguage"><strong>isLanguage</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isList"><strong>isList</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isMatrix"><strong>isMatrix</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isS4"><strong>isS4</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isSymbol"><strong>isSymbol</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-isVector"><strong>isVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-setSymbol"><strong>setSymbol</strong></a>(name, var)</dt><dd><tt>Assign&nbsp;a&nbsp;value&nbsp;to&nbsp;a&nbsp;name&nbsp;in&nbsp;the&nbsp;global&nbsp;environment.<br>
+&nbsp;<br>
+name&nbsp;:&nbsp;The&nbsp;name.<br>
+var&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Engine</strong> = &lt;RDotNet.REngine object at 0x000000000000006C [RDotNet.REngine]&gt;<br>
+<strong>IRONPYTHON_HOME</strong> = r'C:\Program Files\IronPython 2.7'<br>
+<strong>RDotNet</strong> = &lt;module 'RDotNet' (CLS module from RDotNet, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null)&gt;<br>
+<strong>R_HOME</strong> = r'C:\Program Files\R\R-3.4.2'<br>
+<strong>__author__</strong> = 'Nishida Takehito &lt;takehito.nishida@gmail.com&gt;'<br>
+<strong>__date__</strong> = '2018/8/28'<br>
+<strong>__version__</strong> = '0.9.2.0'<br>
+<strong>systemPath</strong> = ['.', r'C:\Program Files\IronPython 2.7\Lib', r'C:\Program Files\IronPython 2.7\DLLs', r'C:\Program Files\IronPython 2.7\Lib\site-packages', r'C:\Program Files\IronPython 2.7\Lib\rdotnet', r'C:\Program Files\R\R-3.4.2']</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Nishida&nbsp;Takehito&nbsp;&lt;takehito.nishida@gmail.com&gt;</td></tr></table>
+</body></html>

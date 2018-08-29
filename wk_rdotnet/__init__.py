@@ -2,11 +2,16 @@
 
 """
 wk_rdotnet.
+
+* It is for 64 bit.
+* Set the path of R_HOME and IRONPYTHON_HOME.
+* RDotNet.dll, RDotNet.NativeLibrary.dll and DynamicInterop.dll is required.
+https://www.nuget.org/packages/R.NET.Community/
 """
 
 __author__  = "Nishida Takehito <takehito.nishida@gmail.com>"
-__version__ = "0.9.3.0"
-__date__    = "2018/8/28"
+__version__ = "0.9.5.0"
+__date__    = "2018/8/29"
 
 #
 # Set path.
@@ -17,9 +22,12 @@ import os.path as path
 from sys import path as systemPath
 from System import Environment as env
 IRONPYTHON_HOME = env.GetEnvironmentVariable("IRONPYTHON_HOME")
+RDOTNET_PATH = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
 R_HOME = env.GetEnvironmentVariable("R_HOME")
-systemPath.append(path.join(IRONPYTHON_HOME, "Lib\\rdotnet"))
+systemPath.append(RDOTNET_PATH)
 systemPath.append(R_HOME)
+print("R : " + R_HOME)
+print("rdotnet : " + RDOTNET_PATH)
 
 #
 # Add reference.
@@ -29,23 +37,35 @@ clr.AddReferenceToFile("wk_rdotnet.dll")
 import RDotNet
 from RDotNet import REngineExtension
 from RDotNet import SymbolicExpressionExtension
-import wk_rdotnet.WkRDotNet as wkr
+import wk_rdotnet.WkRDotNetUtil as utl
 
 #
 # Initialize.
 #
-wkr.Initialize(path.join(R_HOME, "bin\\x64"), R_HOME)
-Engine = wkr.Engine
+RDotNet.REngine.SetEnvironmentVariables(path.join(R_HOME, "bin\\x64"), R_HOME)
+Engine = RDotNet.REngine.GetInstance()
+print("Version : " + __version__)
 
 #
 # Functions.
 #
+def runFunction(func, ops, type=None):
+    """
+    Run a function.
+    
+    func : The function.
+    ops : List of expression.
+    type : If type is not None, run RDotNet.SymbolicExpressionExtension.As***().
+    return : The expression.
+    """
+    return convert(utl.RunFunction(func, ops), type)
+
 def showDoc():
     """
     Show the document.
     """
     import webbrowser
-    webbrowser.open("file:///" + path.join(path.join(IRONPYTHON_HOME, "Lib\\rdotnet", "rdotnet.html")))
+    webbrowser.open("file:///" + path.join(RDOTNET_PATH, "rdotnet.html"))
 
 def getSymbol(name, type=None):
     """

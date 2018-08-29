@@ -7,10 +7,15 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rdotnet</strong></big></big> (version 0.9.2.0, 2018/8/28)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rdotnet</strong></big></big> (version 0.9.5.0, 2018/8/29)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c:\program files\ironpython 2.7\lib\rdotnet\__init__.py">c:\program files\ironpython 2.7\lib\rdotnet\__init__.py</a></font></td></tr></table>
-    <p><tt>wk_rdotnet.</tt></p>
+    <p><tt>wk_rdotnet.<br>
+&nbsp;<br>
+*&nbsp;It&nbsp;is&nbsp;for&nbsp;64&nbsp;bit.<br>
+*&nbsp;Set&nbsp;the&nbsp;path&nbsp;of&nbsp;R_HOME&nbsp;and&nbsp;IRONPYTHON_HOME.<br>
+*&nbsp;RDotNet.dll,&nbsp;RDotNet.NativeLibrary.dll&nbsp;and&nbsp;DynamicInterop.dll&nbsp;is&nbsp;required.<br>
+https://www.nuget.org/packages/R.NET.Community/</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -80,10 +85,17 @@ return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
  <dl><dt><a name="-isS4"><strong>isS4</strong></a>(var)</dt></dl>
  <dl><dt><a name="-isSymbol"><strong>isSymbol</strong></a>(var)</dt></dl>
  <dl><dt><a name="-isVector"><strong>isVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-runFunction"><strong>runFunction</strong></a>(func, ops, type<font color="#909090">=None</font>)</dt><dd><tt>Run&nbsp;a&nbsp;function.<br>
+&nbsp;<br>
+func&nbsp;:&nbsp;The&nbsp;function.<br>
+ops&nbsp;:&nbsp;List&nbsp;of&nbsp;expression.<br>
+type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
+return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
  <dl><dt><a name="-setSymbol"><strong>setSymbol</strong></a>(name, var)</dt><dd><tt>Assign&nbsp;a&nbsp;value&nbsp;to&nbsp;a&nbsp;name&nbsp;in&nbsp;the&nbsp;global&nbsp;environment.<br>
 &nbsp;<br>
 name&nbsp;:&nbsp;The&nbsp;name.<br>
 var&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
+ <dl><dt><a name="-showDoc"><strong>showDoc</strong></a>()</dt><dd><tt>Show&nbsp;the&nbsp;document.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -93,12 +105,13 @@ var&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>Engine</strong> = &lt;RDotNet.REngine object at 0x000000000000006C [RDotNet.REngine]&gt;<br>
 <strong>IRONPYTHON_HOME</strong> = r'C:\Program Files\IronPython 2.7'<br>
+<strong>RDOTNET_PATH</strong> = r'C:\Program Files\IronPython 2.7\Lib\rdotnet'<br>
 <strong>RDotNet</strong> = &lt;module 'RDotNet' (CLS module from RDotNet, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null)&gt;<br>
-<strong>R_HOME</strong> = r'C:\Program Files\R\R-3.4.2'<br>
+<strong>R_HOME</strong> = r'C:\Program Files\R\R-3.4.1'<br>
 <strong>__author__</strong> = 'Nishida Takehito &lt;takehito.nishida@gmail.com&gt;'<br>
-<strong>__date__</strong> = '2018/8/28'<br>
-<strong>__version__</strong> = '0.9.2.0'<br>
-<strong>systemPath</strong> = ['.', r'C:\Program Files\IronPython 2.7\Lib', r'C:\Program Files\IronPython 2.7\DLLs', r'C:\Program Files\IronPython 2.7\Lib\site-packages', r'C:\Program Files\IronPython 2.7\Lib\rdotnet', r'C:\Program Files\R\R-3.4.2']</td></tr></table><p>
+<strong>__date__</strong> = '2018/8/29'<br>
+<strong>__version__</strong> = '0.9.5.0'<br>
+<strong>systemPath</strong> = ['.', r'C:\Program Files\IronPython 2.7\Lib', r'C:\Program Files\IronPython 2.7\DLLs', r'C:\Program Files\IronPython 2.7\Lib\site-packages', r'C:\Program Files\IronPython 2.7\Lib\rdotnet', r'C:\Program Files\R\R-3.4.1']</td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#7799ee">
 <td colspan=3 valign=bottom>&nbsp;<br>

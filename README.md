@@ -7,18 +7,18 @@ The library of C# is used.
 
 * `wk_rdotnet_ipy` folder.
   * There are IronPython script files.
-  * Run this `example_wk_rdotnet.py` file.
+  * Run `example_wk_rdotnet.py` file.
 * `wk_rdotnet.sln`
   * A class that implements RDotNet.
-  * `wk_rdotnet` is a related folder.
+  * `__init__.py` and `rdotnet.html` are files for rdotnet package.
 
-## Notes on execution.
+## Notes on execution
 
 * Open `wk_rdotnet.sln`, and build.
-* Copy the "x64 / Debug" or "x64 / Release" folder to IronPython's "Lib" folder and change it to the folder name "rdotnet".
-* Open `wk_rdotnet_ipy` folder with `Visual Studio Code` and execute it.
+* Copy the "x64_debug/rdotnet" or "x64_release/rdotnet" folder to IronPython's "Lib" folder.
+* Open `wk_rdotnet_ipy` folder with `Visual Studio Code` and run `example_wk_rdotnet.py`.
   * You need the `Python` extension created by Don Jayamanne.
-  * Edit `python.pythonPath` in` settings.json` in the `.vscod` folder to the appropriate path. The following is a description for IronPython 2.7.8.
+  * Edit `python.pythonPath` in `settings.json` in the `.vscod` folder to the appropriate path. The following is a description for IronPython 2.7.8.
 
 ```
 "python.pythonPath": "C:/Program Files/IronPython 2.7/ipy.exe"

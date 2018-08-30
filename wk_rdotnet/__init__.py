@@ -22,8 +22,12 @@ import os.path as path
 from sys import path as systemPath
 from System import Environment as env
 IRONPYTHON_HOME = env.GetEnvironmentVariable("IRONPYTHON_HOME")
-RDOTNET_PATH = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
 R_HOME = env.GetEnvironmentVariable("R_HOME")
+
+if IRONPYTHON_HOME is None or R_HOME is None:
+    raise Exception("Error : Set path of R_HOME and IRONPYTHON_HOME.")
+
+RDOTNET_PATH = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
 systemPath.append(RDOTNET_PATH)
 systemPath.append(R_HOME)
 print("R : " + R_HOME)
@@ -44,7 +48,7 @@ import wk_rdotnet.WkRDotNetUtil as utl
 #
 RDotNet.REngine.SetEnvironmentVariables(path.join(R_HOME, "bin\\x64"), R_HOME)
 Engine = RDotNet.REngine.GetInstance()
-print("Version : " + __version__)
+print("REngine is initialized.")
 
 #
 # Functions.
@@ -184,9 +188,14 @@ def asComplexMatrix(var):
     else:
         return var
 
-def asDataFrame(var):
+def asDataFrame(var, colnames=None):
     if isDataFrame(var):
         return SymbolicExpressionExtension.AsDataFrame(var)
+    elif isMatrix(var):
+        asdf = evaluate("as.data.frame", "function")
+        dst = runFunction(asdf, [var], "dataframe")
+        asdf.Dispose()
+        return dst
     else:
         return var
 
@@ -336,3 +345,27 @@ def createNumericVector(var):
 def createRawVector(var):
     global Engine
     return REngineExtension.CreateRawVector(Engine, var)
+
+def createCharacterMatrix(row, col):
+    global Engine
+    return REngineExtension.CreateCharacterMatrix(Engine, row, col)
+
+def createComplexMatrix(row, col):
+    global Engine
+    return REngineExtension.CreateComplexMatrix(Engine, row, col)
+
+def createIntegerMatrix(row, col):
+    global Engine
+    return REngineExtension.CreateIntegerMatrix(Engine, row, col)
+
+def createLogicalMatrix(row, col):
+    global Engine
+    return REngineExtension.CreateLogicalMatrix(Engine, row, col)
+
+def createNumericMatrix(row, col):
+    global Engine
+    return REngineExtension.CreateNumericMatrix(Engine, row, col)
+
+def createRawMatrix(row, col):
+    global Engine
+    return REngineExtension.CreateRawMatrix(Engine, row, col)

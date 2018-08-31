@@ -10,8 +10,8 @@ https://www.nuget.org/packages/R.NET.Community/
 """
 
 __author__  = "Nishida Takehito <takehito.nishida@gmail.com>"
-__version__ = "0.9.5.0"
-__date__    = "2018/8/29"
+__version__ = "0.9.6.0"
+__date__    = "2018/8/31"
 
 #
 # Set path.

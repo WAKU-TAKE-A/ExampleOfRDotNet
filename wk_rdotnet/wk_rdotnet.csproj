@@ -7,8 +7,8 @@
     <ProjectGuid>{95DB570C-02D5-4185-88CF-0B465D26F39C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>wk_rdotnet</RootNamespace>
-    <AssemblyName>wk_rdotnet</AssemblyName>
+    <RootNamespace>dummy</RootNamespace>
+    <AssemblyName>dummy</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WkRDotNetUtil.cs" />
+    <Compile Include="Dummy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

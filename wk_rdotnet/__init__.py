@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-wk_rdotnet.
+rdotnet.
 
 * It is for 64 bit.
 * Set the path of R_HOME and IRONPYTHON_HOME.
@@ -37,11 +37,9 @@ print("rdotnet : " + RDOTNET_PATH)
 # Add reference.
 #
 clr.AddReferenceToFile("RDotNet.dll")
-clr.AddReferenceToFile("wk_rdotnet.dll")
 import RDotNet
 from RDotNet import REngineExtension
 from RDotNet import SymbolicExpressionExtension
-import wk_rdotnet.WkRDotNetUtil as utl
 
 #
 # Initialize.
@@ -53,7 +51,7 @@ print("REngine is initialized.")
 #
 # Functions.
 #
-def runFunction(func, ops, type=None):
+def runFunction(func, opt, type=None):
     """
     Run a function.
     
@@ -62,7 +60,7 @@ def runFunction(func, ops, type=None):
     type : If type is not None, run RDotNet.SymbolicExpressionExtension.As***().
     return : The expression.
     """
-    return convert(utl.RunFunction(func, ops), type)
+    return convert(func.__getattribute__("Invoke")(tuple(opt)), type)
 
 def showDoc():
     """

@@ -7,16 +7,17 @@ The library of C# is used.
 
 * `wk_rdotnet_ipy` folder.
   * There are IronPython script files.
-  * Run `example_wk_rdotnet.py` file.
+  * Run `example_wk_rdotnet.py`.
 * `wk_rdotnet.sln`
-  * A class that implements R.NET.
-  * `__init__.py` and `rdotnet.html` are files for the package.
+  * To install R.NET.
+  * To generate `rdotnet` package.
 
 ## Notes on execution
 
 * Open `wk_rdotnet.sln`.
 * Install R.NET with NuGet.
 * Build.
+  * What is needed is only the `__init__.py`, `rdotnet.html`, `DynamicInterop.dll`, `RDotNet.dll` and `RDotNet.NativeLibrary.dll`.
 * Copy the `x64_debug/rdotnet` or `x64_release/rdotnet` folder to IronPython's `Lib` folder.
 * Open `wk_rdotnet_ipy` folder with `Visual Studio Code` and run `example_wk_rdotnet.py`.
   * You need the `Python` extension created by Don Jayamanne.

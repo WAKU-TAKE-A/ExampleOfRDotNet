@@ -10,8 +10,8 @@ https://www.nuget.org/packages/R.NET.Community/
 """
 
 __author__  = "Nishida Takehito <takehito.nishida@gmail.com>"
-__version__ = "0.9.6.0"
-__date__    = "2018/8/31"
+__version__ = "0.9.7.0"
+__date__    = "2018/9/1"
 
 #
 # Set path.
@@ -46,11 +46,20 @@ from RDotNet import SymbolicExpressionExtension
 #
 RDotNet.REngine.SetEnvironmentVariables(path.join(R_HOME, "bin\\x64"), R_HOME)
 Engine = RDotNet.REngine.GetInstance()
+_r_print = SymbolicExpressionExtension.AsFunction(Engine.Evaluate("print"))
 print("REngine is initialized.")
 
 #
 # Functions.
 #
+def runPrint(var):
+    """
+    Run print command.
+    
+    var : The expression.
+    """
+    runFunction(_r_print, [var])
+
 def runFunction(func, opt, type=None):
     """
     Run a function.
@@ -60,6 +69,9 @@ def runFunction(func, opt, type=None):
     type : If type is not None, run RDotNet.SymbolicExpressionExtension.As***().
     return : The expression.
     """
+    return convert(func.__getattribute__("Invoke")(tuple(opt)), type)
+
+def runFunc(func, opt, type=None):
     return convert(func.__getattribute__("Invoke")(tuple(opt)), type)
 
 def showDoc():
@@ -367,3 +379,6 @@ def createNumericMatrix(row, col):
 def createRawMatrix(row, col):
     global Engine
     return REngineExtension.CreateRawMatrix(Engine, row, col)
+
+def createFunction(var):
+    return SymbolicExpressionExtension.AsFunction(Engine.Evaluate(var))

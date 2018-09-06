@@ -7,10 +7,10 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rdotnet</strong></big></big> (version 0.9.7.0, 2018/9/1)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rdotnet</strong></big></big> (version 0.9.8.0, 2018/9/4)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c:\program files\ironpython 2.7\lib\rdotnet\__init__.py">c:\program files\ironpython 2.7\lib\rdotnet\__init__.py</a></font></td></tr></table>
-    <p><tt>rdotnet.<br>
+    <p><tt>Package&nbsp;for&nbsp;using&nbsp;R&nbsp;language&nbsp;on&nbsp;IronPython<br>
 &nbsp;<br>
 *&nbsp;It&nbsp;is&nbsp;for&nbsp;64&nbsp;bit.<br>
 *&nbsp;Set&nbsp;the&nbsp;path&nbsp;of&nbsp;R_HOME&nbsp;and&nbsp;IRONPYTHON_HOME.<br>
@@ -61,7 +61,15 @@ retuen&nbsp;:&nbsp;The&nbsp;converted&nbsp;expression.</tt></dd></dl>
  <dl><dt><a name="-createCharacterVector"><strong>createCharacterVector</strong></a>(var)</dt></dl>
  <dl><dt><a name="-createComplexMatrix"><strong>createComplexMatrix</strong></a>(row, col)</dt></dl>
  <dl><dt><a name="-createComplexVector"><strong>createComplexVector</strong></a>(var)</dt></dl>
- <dl><dt><a name="-createFunction"><strong>createFunction</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-createDataFrame"><strong>createDataFrame</strong></a>(list_vec, colnames<font color="#909090">=None</font>)</dt><dd><tt>Create&nbsp;the&nbsp;DataFrame.<br>
+&nbsp;<br>
+list_vec&nbsp;:&nbsp;The&nbsp;list&nbsp;of&nbsp;Vecotor.<br>
+colnames&nbsp;:&nbsp;The&nbsp;list<br>
+return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
+ <dl><dt><a name="-createFunction"><strong>createFunction</strong></a>(cmd)</dt><dd><tt>Create&nbsp;the&nbsp;function.<br>
+&nbsp;<br>
+cmd&nbsp;:&nbsp;The&nbsp;string&nbsp;of&nbsp;function.<br>
+return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
  <dl><dt><a name="-createIntegerMatrix"><strong>createIntegerMatrix</strong></a>(row, col)</dt></dl>
  <dl><dt><a name="-createIntegerVector"><strong>createIntegerVector</strong></a>(var)</dt></dl>
  <dl><dt><a name="-createLogicalMatrix"><strong>createLogicalMatrix</strong></a>(row, col)</dt></dl>
@@ -118,11 +126,11 @@ var&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
 <strong>IRONPYTHON_HOME</strong> = r'C:\Program Files\IronPython 2.7'<br>
 <strong>RDOTNET_PATH</strong> = r'C:\Program Files\IronPython 2.7\Lib\rdotnet'<br>
 <strong>RDotNet</strong> = &lt;module 'RDotNet' (CLS module from RDotNet, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null)&gt;<br>
-<strong>R_HOME</strong> = r'C:\Program Files\R\R-3.4.2'<br>
+<strong>R_HOME</strong> = r'C:\Program Files\R\R-3.4.4'<br>
 <strong>__author__</strong> = 'Nishida Takehito &lt;takehito.nishida@gmail.com&gt;'<br>
-<strong>__date__</strong> = '2018/9/1'<br>
-<strong>__version__</strong> = '0.9.7.0'<br>
-<strong>systemPath</strong> = ['.', r'C:\Program Files\IronPython 2.7\Lib', r'C:\Program Files\IronPython 2.7\DLLs', r'C:\Program Files\IronPython 2.7\Lib\site-packages', r'C:\Program Files\IronPython 2.7\Lib\rdotnet', r'C:\Program Files\R\R-3.4.2']</td></tr></table><p>
+<strong>__date__</strong> = '2018/9/4'<br>
+<strong>__version__</strong> = '0.9.8.0'<br>
+<strong>systemPath</strong> = ['.', r'C:\Program Files\IronPython 2.7\Lib', r'C:\Program Files\IronPython 2.7\DLLs', r'C:\Program Files\IronPython 2.7\Lib\site-packages', r'C:\Program Files\IronPython 2.7\Lib\rdotnet', r'C:\Program Files\R\R-3.4.4']</td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#7799ee">
 <td colspan=3 valign=bottom>&nbsp;<br>

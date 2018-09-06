@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-rdotnet.
+Package for using R language on IronPython
 
 * It is for 64 bit.
 * Set the path of R_HOME and IRONPYTHON_HOME.
@@ -10,8 +10,8 @@ https://www.nuget.org/packages/R.NET.Community/
 """
 
 __author__  = "Nishida Takehito <takehito.nishida@gmail.com>"
-__version__ = "0.9.7.0"
-__date__    = "2018/9/1"
+__version__ = "0.9.8.0"
+__date__    = "2018/9/4"
 
 #
 # Set path.
@@ -52,12 +52,25 @@ print("REngine is initialized.")
 #
 # Functions.
 #
+def Initialize(eng=None):
+    """
+    Initialize REngine.
+    """
+    global Engine
+    if eng is None:
+        RDotNet.REngine.SetEnvironmentVariables(path.join(R_HOME, "bin\\x64"), R_HOME)
+        Engine = RDotNet.REngine.GetInstance()
+    else:
+        Engine = eng
+    print("REngine is initialized.")
+
 def runPrint(var):
     """
     Run print command.
     
     var : The expression.
     """
+    _r_print = SymbolicExpressionExtension.AsFunction(Engine.Evaluate("print"))
     runFunction(_r_print, [var])
 
 def runFunction(func, opt, type=None):
@@ -380,5 +393,33 @@ def createRawMatrix(row, col):
     global Engine
     return REngineExtension.CreateRawMatrix(Engine, row, col)
 
-def createFunction(var):
-    return SymbolicExpressionExtension.AsFunction(Engine.Evaluate(var))
+def createFunction(cmd):
+    """
+    Create the function.
+    
+    cmd : The string of function.
+    return : The expression.
+    """
+    return SymbolicExpressionExtension.AsFunction(Engine.Evaluate(cmd))
+
+def createDataFrame(list_vec, colnames=None):
+    """
+    Create the DataFrame.
+    
+    list_vec : The list of Vecotor.
+    colnames : The list
+    return : The expression.
+    """
+    if list_vec is None or len(list_vec) == 0:
+        return None
+    if colnames is None or len(list_vec) != len(colnames):
+        colnames = []
+        for i in xrange(len(list_vec)):
+            colnames.append("V{0}".format(i + 1))
+    _r_dataframe = SymbolicExpressionExtension.AsFunction(Engine.Evaluate("data.frame"))
+    _r_colnames = SymbolicExpressionExtension.AsFunction(Engine.Evaluate("colnames"))
+    dst = runFunction(_r_dataframe, list_vec, "dataframe")
+    cln = runFunction(_r_colnames, [dst], "character")
+    for i in xrange(len(list_vec)):
+        cln[i] = colnames[i]
+    return dst

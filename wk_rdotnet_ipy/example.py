@@ -23,7 +23,7 @@ r.evaluate("dev.off()")
 #
 # Example of DataFrame.
 #
-csv = r.evaluate("csv <- read.csv('sample.csv', stringsAsFactors=F)", "dataframe")
+csv = r.evaluate("csv <- read.csv('example.csv', stringsAsFactors=F)", "dataframe")
 print("Name : ")
 print(list(csv["Name"]))
 print("Height : ")

@@ -27,11 +27,11 @@ R_HOME = env.GetEnvironmentVariable("R_HOME")
 if IRONPYTHON_HOME is None or R_HOME is None:
     raise Exception("Error : Set path of R_HOME and IRONPYTHON_HOME.")
 
-RDOTNET_PATH = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
-systemPath.append(RDOTNET_PATH)
+IRONPYTHON_RDOTNET = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
+systemPath.append(IRONPYTHON_RDOTNET)
 systemPath.append(R_HOME)
 print("R : " + R_HOME)
-print("rdotnet : " + RDOTNET_PATH)
+print("rdotnet : " + IRONPYTHON_RDOTNET)
 
 #
 # Add reference.
@@ -92,7 +92,7 @@ def showDoc():
     Show the document.
     """
     import webbrowser
-    webbrowser.open("file:///" + path.join(RDOTNET_PATH, "rdotnet.html"))
+    webbrowser.open("file:///" + path.join(IRONPYTHON_RDOTNET, "rdotnet.html"))
 
 def getSymbol(name, type=None):
     """

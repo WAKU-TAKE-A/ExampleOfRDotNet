@@ -23,14 +23,16 @@ https://www.nuget.org/packages/R.NET.Community/</tt></p>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="rdotnet.example.html">example</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-asCharacter"><strong>asCharacter</strong></a>(var)</dt></dl>
+<td width="100%"><dl><dt><a name="-Initialize"><strong>Initialize</strong></a>(eng<font color="#909090">=None</font>)</dt><dd><tt>Initialize&nbsp;REngine.</tt></dd></dl>
+ <dl><dt><a name="-asCharacter"><strong>asCharacter</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asCharacterMatrix"><strong>asCharacterMatrix</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asComplex"><strong>asComplex</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asComplexMatrix"><strong>asComplexMatrix</strong></a>(var)</dt></dl>
@@ -57,27 +59,27 @@ https://www.nuget.org/packages/R.NET.Community/</tt></p>
 var&nbsp;:&nbsp;The&nbsp;expression.<br>
 type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
 retuen&nbsp;:&nbsp;The&nbsp;converted&nbsp;expression.</tt></dd></dl>
- <dl><dt><a name="-createCharacterMatrix"><strong>createCharacterMatrix</strong></a>(row, col)</dt></dl>
- <dl><dt><a name="-createCharacterVector"><strong>createCharacterVector</strong></a>(var)</dt></dl>
- <dl><dt><a name="-createComplexMatrix"><strong>createComplexMatrix</strong></a>(row, col)</dt></dl>
- <dl><dt><a name="-createComplexVector"><strong>createComplexVector</strong></a>(var)</dt></dl>
- <dl><dt><a name="-createDataFrame"><strong>createDataFrame</strong></a>(list_vec, colnames<font color="#909090">=None</font>)</dt><dd><tt>Create&nbsp;the&nbsp;DataFrame.<br>
+ <dl><dt><a name="-createCharacterMatrix"><strong>createCharacterMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createCharacterVector"><strong>createCharacterVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createComplexMatrix"><strong>createComplexMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createComplexVector"><strong>createComplexVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createDataFrame"><strong>createDataFrame</strong></a>(list_vec, colnames<font color="#909090">=None</font>, name<font color="#909090">=None</font>)</dt><dd><tt>Create&nbsp;the&nbsp;DataFrame.<br>
 &nbsp;<br>
 list_vec&nbsp;:&nbsp;The&nbsp;list&nbsp;of&nbsp;Vecotor.<br>
 colnames&nbsp;:&nbsp;The&nbsp;list<br>
 return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
- <dl><dt><a name="-createFunction"><strong>createFunction</strong></a>(cmd)</dt><dd><tt>Create&nbsp;the&nbsp;function.<br>
+ <dl><dt><a name="-createFunction"><strong>createFunction</strong></a>(cmd, name<font color="#909090">=None</font>)</dt><dd><tt>Create&nbsp;the&nbsp;function.<br>
 &nbsp;<br>
 cmd&nbsp;:&nbsp;The&nbsp;string&nbsp;of&nbsp;function.<br>
 return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
- <dl><dt><a name="-createIntegerMatrix"><strong>createIntegerMatrix</strong></a>(row, col)</dt></dl>
- <dl><dt><a name="-createIntegerVector"><strong>createIntegerVector</strong></a>(var)</dt></dl>
- <dl><dt><a name="-createLogicalMatrix"><strong>createLogicalMatrix</strong></a>(row, col)</dt></dl>
- <dl><dt><a name="-createLogicalVector"><strong>createLogicalVector</strong></a>(var)</dt></dl>
- <dl><dt><a name="-createNumericMatrix"><strong>createNumericMatrix</strong></a>(row, col)</dt></dl>
- <dl><dt><a name="-createNumericVector"><strong>createNumericVector</strong></a>(var)</dt></dl>
- <dl><dt><a name="-createRawMatrix"><strong>createRawMatrix</strong></a>(row, col)</dt></dl>
- <dl><dt><a name="-createRawVector"><strong>createRawVector</strong></a>(var)</dt></dl>
+ <dl><dt><a name="-createIntegerMatrix"><strong>createIntegerMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createIntegerVector"><strong>createIntegerVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createLogicalMatrix"><strong>createLogicalMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createLogicalVector"><strong>createLogicalVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createNumericMatrix"><strong>createNumericMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createNumericVector"><strong>createNumericVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createRawMatrix"><strong>createRawMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-createRawVector"><strong>createRawVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-eval"><strong>eval</strong></a>(cmd, type<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-evaluate"><strong>evaluate</strong></a>(cmd, type<font color="#909090">=None</font>)</dt><dd><tt>Evaluates&nbsp;a&nbsp;statement&nbsp;in&nbsp;the&nbsp;given&nbsp;stream.<br>
 &nbsp;<br>

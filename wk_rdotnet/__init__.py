@@ -10,8 +10,8 @@ https://www.nuget.org/packages/R.NET.Community/
 """
 
 __author__  = "Nishida Takehito <takehito.nishida@gmail.com>"
-__version__ = "0.9.8.0"
-__date__    = "2018/9/4"
+__version__ = "0.9.9.0"
+__date__    = "2018/10/30"
 
 #
 # Set path.
@@ -27,11 +27,11 @@ R_HOME = env.GetEnvironmentVariable("R_HOME")
 if IRONPYTHON_HOME is None or R_HOME is None:
     raise Exception("Error : Set path of R_HOME and IRONPYTHON_HOME.")
 
-IRONPYTHON_RDOTNET = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
-systemPath.append(IRONPYTHON_RDOTNET)
+RDOTNET_PATH = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
+systemPath.append(RDOTNET_PATH)
 systemPath.append(R_HOME)
 print("R : " + R_HOME)
-print("rdotnet : " + IRONPYTHON_RDOTNET)
+print("rdotnet : " + RDOTNET_PATH)
 
 #
 # Add reference.
@@ -92,7 +92,7 @@ def showDoc():
     Show the document.
     """
     import webbrowser
-    webbrowser.open("file:///" + path.join(IRONPYTHON_RDOTNET, "rdotnet.html"))
+    webbrowser.open("file:///" + path.join(RDOTNET_PATH, "rdotnet.html"))
 
 def getSymbol(name, type=None):
     """
@@ -345,64 +345,103 @@ def isSymbol(var):
 def isVector(var):
     return SymbolicExpressionExtension.IsVector(var)
 
-def createCharacterVector(var):
+def createCharacterVector(var, name=None):
     global Engine
-    return REngineExtension.CreateCharacterVector(Engine, var)
+    dst = REngineExtension.CreateCharacterVector(Engine, var)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createComplexVector(var):
+def createComplexVector(var, name=None):
     global Engine
-    return REngineExtension.CreateComplexVector(Engine, var)
+    dst = REngineExtension.CreateComplexVector(Engine, var)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createIntegerVector(var):
+def createIntegerVector(var, name=None):
     global Engine
-    return REngineExtension.CreateIntegerVector(Engine, var)
+    dst = REngineExtension.CreateIntegerVector(Engine, var)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createLogicalVector(var):
+def createLogicalVector(var, name=None):
     global Engine
-    return REngineExtension.CreateLogicalVector(Engine, var)
+    dst = REngineExtension.CreateLogicalVector(Engine, var)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createNumericVector(var):
+def createNumericVector(var, name=None):
     global Engine
-    return REngineExtension.CreateNumericVector(Engine, var)
+    dst = REngineExtension.CreateNumericVector(Engine, var)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createRawVector(var):
+def createRawVector(var, name=None):
     global Engine
-    return REngineExtension.CreateRawVector(Engine, var)
+    dst = REngineExtension.CreateRawVector(Engine, var)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createCharacterMatrix(row, col):
+def createCharacterMatrix(row, col, name=None):
     global Engine
-    return REngineExtension.CreateCharacterMatrix(Engine, row, col)
+    dst = REngineExtension.CreateCharacterMatrix(Engine, row, col)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createComplexMatrix(row, col):
+def createComplexMatrix(row, col, name=None):
     global Engine
-    return REngineExtension.CreateComplexMatrix(Engine, row, col)
+    dst = REngineExtension.CreateComplexMatrix(Engine, row, col)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createIntegerMatrix(row, col):
+def createIntegerMatrix(row, col, name=None):
     global Engine
-    return REngineExtension.CreateIntegerMatrix(Engine, row, col)
+    dst = REngineExtension.CreateIntegerMatrix(Engine, row, col)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createLogicalMatrix(row, col):
+def createLogicalMatrix(row, col, name=None):
     global Engine
-    return REngineExtension.CreateLogicalMatrix(Engine, row, col)
+    dst = REngineExtension.CreateLogicalMatrix(Engine, row, col)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createNumericMatrix(row, col):
+def createNumericMatrix(row, col, name=None):
     global Engine
-    return REngineExtension.CreateNumericMatrix(Engine, row, col)
+    dst = REngineExtension.CreateNumericMatrix(Engine, row, col)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createRawMatrix(row, col):
+def createRawMatrix(row, col, name=None):
     global Engine
-    return REngineExtension.CreateRawMatrix(Engine, row, col)
+    dst = REngineExtension.CreateRawMatrix(Engine, row, col)
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createFunction(cmd):
+def createFunction(cmd, name=None):
     """
     Create the function.
     
     cmd : The string of function.
     return : The expression.
     """
-    return SymbolicExpressionExtension.AsFunction(Engine.Evaluate(cmd))
+    dst = SymbolicExpressionExtension.AsFunction(Engine.Evaluate(cmd))
+    if name != None:
+        setSymbol(name, dst)
+    return dst
 
-def createDataFrame(list_vec, colnames=None):
+def createDataFrame(list_vec, colnames=None, name=None):
     """
     Create the DataFrame.
     
@@ -422,4 +461,6 @@ def createDataFrame(list_vec, colnames=None):
     cln = runFunction(_r_colnames, [dst], "character")
     for i in xrange(len(list_vec)):
         cln[i] = colnames[i]
+    if name != None:
+        setSymbol(name, dst)
     return dst

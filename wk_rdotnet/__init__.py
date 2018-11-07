@@ -10,8 +10,8 @@ https://www.nuget.org/packages/R.NET.Community/
 """
 
 __author__  = "Nishida Takehito <takehito.nishida@gmail.com>"
-__version__ = "0.9.10.0"
-__date__    = "2018/11/5"
+__version__ = "0.9.11.0"
+__date__    = "2018/11/7"
 
 #
 # Set path.
@@ -27,11 +27,11 @@ R_HOME = env.GetEnvironmentVariable("R_HOME")
 if IRONPYTHON_HOME is None or R_HOME is None:
     raise Exception("Error : Set path of R_HOME and IRONPYTHON_HOME.")
 
-IRONPYTHON_RDOTNET = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
-systemPath.append(IRONPYTHON_RDOTNET)
+RDOTNET_PATH = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
+systemPath.append(RDOTNET_PATH)
 systemPath.append(R_HOME)
 print("R : " + R_HOME)
-print("rdotnet : " + IRONPYTHON_RDOTNET)
+print("rdotnet : " + RDOTNET_PATH)
 
 #
 # Add reference.

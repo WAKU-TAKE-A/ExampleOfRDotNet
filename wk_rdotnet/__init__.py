@@ -69,7 +69,7 @@ def runPrint(var):
     """
     Run print command.
     
-    var : The SymbolicExpression.
+    var : The Expression.
     """
     _r_print = SymbolicExpressionExtension.AsFunction(Engine.Evaluate("print"))
     runFunction(_r_print, [var])
@@ -79,10 +79,10 @@ def runFunction(func, opt, type=None, enToArray=False):
     Run the function.
     
     func : The function.
-    ops : List of SymbolicExpression.
+    ops : List of Expression.
     type : If type is not None, run RDotNet.SymbolicExpressionExtension.As***().
-    enToArray : if enToArray is True, run Vector.ToArray().
-    return : The SymbolicExpression.
+    enToArray : If enToArray is True, run Vector.ToArray().
+    return : The Expression.
     """
     dst = convert(func.__getattribute__("Invoke")(tuple(opt)), type)
     if enToArray:
@@ -99,7 +99,7 @@ def runLength(var):
     """
     Run Vector.Lengh.
     
-    var : The SymbolicExpression.
+    var : The Expression.
     """
     return var.__getattribute__("Length")
 
@@ -107,7 +107,7 @@ def runToArray(var):
     """
     Run Vector.ToArray().
     
-    var : The SymbolicExpression.
+    var : The Expression.
     """
     return var.__getattribute__("ToArray")()
 
@@ -120,12 +120,12 @@ def showDoc():
 
 def getSymbol(name, type=None, enToArray=False):
     """
-    Get a symbol defined in the global environment.
+    Get the symbol defined in the global environment.
     
     name : The name.
     type : If type is not None, run RDotNet.SymbolicExpressionExtension.As***().
     enToArray : if enToArray is True, run Vector.ToArray().
-    return : The SymbolicExpression.
+    return : The Expression.
     """
     global Engine
     dst = convert(Engine.GetSymbol(name), type)
@@ -135,22 +135,22 @@ def getSymbol(name, type=None, enToArray=False):
 
 def setSymbol(name, var):
     """
-    Assign a value to a name in the global environment.
+    Assign the value to the name in the global environment.
     
     name : The name.
-    var : The SymbolicExpression.
+    var : The Expression.
     """
     global Engine
     Engine.SetSymbol(name, var)
 
 def evaluate(cmd, type=None, enToArray=False):
     """
-    Evaluate a statement in the given stream.
+    Evaluate the statement in the given stream.
     
     cmd : The given string.
     type : If type is not None, run RDotNet.SymbolicExpressionExtension.As***().
-    enToArray : if enToArray is True, run Vector.ToArray().
-    return : The SymbolicExpression.
+    enToArray : If enToArray is True, run Vector.ToArray().
+    return : The Expression.
     """
     global Engine
     dst = convert(Engine.Evaluate(cmd), type)
@@ -166,11 +166,11 @@ def eval(cmd, type=None, enToArray=False):
 
 def convert(var, type):
     """
-    Get the SymbolicExpression as the given type.
+    Get the Expression as the given type.
     
-    var : The SymbolicExpression.
+    var : The Expression.
     type : If type is not None, run RDotNet.SymbolicExpressionExtension.As***().
-    retuen : The converted SymbolicExpression.
+    retuen : The converted Expression.
     """
     if type is None or type == "":
         return var
@@ -245,7 +245,13 @@ def asComplexMatrix(var):
     else:
         return var
 
-def asDataFrame(var, colnames=None):
+def asDataFrame(var):
+    """
+    Converts the specified expression to a DataFrame.
+
+    var : The expression of DataFrame or Matrix.
+    return : The DataFrame.
+    """
     if isDataFrame(var):
         return SymbolicExpressionExtension.AsDataFrame(var)
     elif isMatrix(var):
@@ -469,6 +475,7 @@ def createDataFrame(list_vec, colnames=None, name=None):
     
     list_vec : The list of RDotNet.Vector.
     colnames : The list of IronPython.
+    name : The name.
     return : The expression.
     """
     if list_vec is None or len(list_vec) == 0:

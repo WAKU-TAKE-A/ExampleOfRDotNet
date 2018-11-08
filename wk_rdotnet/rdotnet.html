@@ -7,7 +7,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rdotnet</strong></big></big> (version 0.9.10.0, 2018/11/5)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>rdotnet</strong></big></big> (version 0.9.11.0, 2018/11/7)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c:\program files\ironpython 2.7\lib\rdotnet\__init__.py">c:\program files\ironpython 2.7\lib\rdotnet\__init__.py</a></font></td></tr></table>
     <p><tt>Package&nbsp;for&nbsp;using&nbsp;R&nbsp;language&nbsp;on&nbsp;IronPython<br>
@@ -36,7 +36,10 @@ https://www.nuget.org/packages/R.NET.Community/</tt></p>
  <dl><dt><a name="-asCharacterMatrix"><strong>asCharacterMatrix</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asComplex"><strong>asComplex</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asComplexMatrix"><strong>asComplexMatrix</strong></a>(var)</dt></dl>
- <dl><dt><a name="-asDataFrame"><strong>asDataFrame</strong></a>(var, colnames<font color="#909090">=None</font>)</dt></dl>
+ <dl><dt><a name="-asDataFrame"><strong>asDataFrame</strong></a>(var)</dt><dd><tt>Converts&nbsp;the&nbsp;specified&nbsp;expression&nbsp;to&nbsp;a&nbsp;DataFrame.<br>
+&nbsp;<br>
+var&nbsp;:&nbsp;The&nbsp;expression&nbsp;of&nbsp;DataFrame&nbsp;or&nbsp;Matrix.<br>
+return&nbsp;:&nbsp;The&nbsp;DataFrame.</tt></dd></dl>
  <dl><dt><a name="-asEnvironment"><strong>asEnvironment</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asExpression"><strong>asExpression</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asFactor"><strong>asFactor</strong></a>(var)</dt></dl>
@@ -54,11 +57,11 @@ https://www.nuget.org/packages/R.NET.Community/</tt></p>
  <dl><dt><a name="-asS4"><strong>asS4</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asSymbol"><strong>asSymbol</strong></a>(var)</dt></dl>
  <dl><dt><a name="-asVector"><strong>asVector</strong></a>(var)</dt></dl>
- <dl><dt><a name="-convert"><strong>convert</strong></a>(var, type)</dt><dd><tt>Get&nbsp;the&nbsp;SymbolicExpression&nbsp;as&nbsp;the&nbsp;given&nbsp;type.<br>
+ <dl><dt><a name="-convert"><strong>convert</strong></a>(var, type)</dt><dd><tt>Get&nbsp;the&nbsp;Expression&nbsp;as&nbsp;the&nbsp;given&nbsp;type.<br>
 &nbsp;<br>
-var&nbsp;:&nbsp;The&nbsp;SymbolicExpression.<br>
+var&nbsp;:&nbsp;The&nbsp;Expression.<br>
 type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
-retuen&nbsp;:&nbsp;The&nbsp;converted&nbsp;SymbolicExpression.</tt></dd></dl>
+retuen&nbsp;:&nbsp;The&nbsp;converted&nbsp;Expression.</tt></dd></dl>
  <dl><dt><a name="-createCharacterMatrix"><strong>createCharacterMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-createCharacterVector"><strong>createCharacterVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-createComplexMatrix"><strong>createComplexMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
@@ -67,6 +70,7 @@ retuen&nbsp;:&nbsp;The&nbsp;converted&nbsp;SymbolicExpression.</tt></dd></dl>
 &nbsp;<br>
 list_vec&nbsp;:&nbsp;The&nbsp;list&nbsp;of&nbsp;RDotNet.Vector.<br>
 colnames&nbsp;:&nbsp;The&nbsp;list&nbsp;of&nbsp;IronPython.<br>
+name&nbsp;:&nbsp;The&nbsp;name.<br>
 return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
  <dl><dt><a name="-createIntegerMatrix"><strong>createIntegerMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-createIntegerVector"><strong>createIntegerVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
@@ -77,18 +81,18 @@ return&nbsp;:&nbsp;The&nbsp;expression.</tt></dd></dl>
  <dl><dt><a name="-createRawMatrix"><strong>createRawMatrix</strong></a>(row, col, name<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-createRawVector"><strong>createRawVector</strong></a>(var, name<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-eval"><strong>eval</strong></a>(cmd, type<font color="#909090">=None</font>, enToArray<font color="#909090">=False</font>)</dt><dd><tt>Same&nbsp;as&nbsp;<a href="#-evaluate">evaluate</a>().</tt></dd></dl>
- <dl><dt><a name="-evaluate"><strong>evaluate</strong></a>(cmd, type<font color="#909090">=None</font>, enToArray<font color="#909090">=False</font>)</dt><dd><tt>Evaluate&nbsp;a&nbsp;statement&nbsp;in&nbsp;the&nbsp;given&nbsp;stream.<br>
+ <dl><dt><a name="-evaluate"><strong>evaluate</strong></a>(cmd, type<font color="#909090">=None</font>, enToArray<font color="#909090">=False</font>)</dt><dd><tt>Evaluate&nbsp;the&nbsp;statement&nbsp;in&nbsp;the&nbsp;given&nbsp;stream.<br>
 &nbsp;<br>
 cmd&nbsp;:&nbsp;The&nbsp;given&nbsp;string.<br>
 type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
-enToArray&nbsp;:&nbsp;if&nbsp;enToArray&nbsp;is&nbsp;True,&nbsp;run&nbsp;Vector.ToArray().<br>
-return&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
- <dl><dt><a name="-getSymbol"><strong>getSymbol</strong></a>(name, type<font color="#909090">=None</font>, enToArray<font color="#909090">=False</font>)</dt><dd><tt>Get&nbsp;a&nbsp;symbol&nbsp;defined&nbsp;in&nbsp;the&nbsp;global&nbsp;environment.<br>
+enToArray&nbsp;:&nbsp;If&nbsp;enToArray&nbsp;is&nbsp;True,&nbsp;run&nbsp;Vector.ToArray().<br>
+return&nbsp;:&nbsp;The&nbsp;Expression.</tt></dd></dl>
+ <dl><dt><a name="-getSymbol"><strong>getSymbol</strong></a>(name, type<font color="#909090">=None</font>, enToArray<font color="#909090">=False</font>)</dt><dd><tt>Get&nbsp;the&nbsp;symbol&nbsp;defined&nbsp;in&nbsp;the&nbsp;global&nbsp;environment.<br>
 &nbsp;<br>
 name&nbsp;:&nbsp;The&nbsp;name.<br>
 type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
 enToArray&nbsp;:&nbsp;if&nbsp;enToArray&nbsp;is&nbsp;True,&nbsp;run&nbsp;Vector.ToArray().<br>
-return&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
+return&nbsp;:&nbsp;The&nbsp;Expression.</tt></dd></dl>
  <dl><dt><a name="-isDataFrame"><strong>isDataFrame</strong></a>(var)</dt></dl>
  <dl><dt><a name="-isEnvironment"><strong>isEnvironment</strong></a>(var)</dt></dl>
  <dl><dt><a name="-isExpression"><strong>isExpression</strong></a>(var)</dt></dl>
@@ -104,23 +108,23 @@ return&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
  <dl><dt><a name="-runFunction"><strong>runFunction</strong></a>(func, opt, type<font color="#909090">=None</font>, enToArray<font color="#909090">=False</font>)</dt><dd><tt>Run&nbsp;the&nbsp;function.<br>
 &nbsp;<br>
 func&nbsp;:&nbsp;The&nbsp;function.<br>
-ops&nbsp;:&nbsp;List&nbsp;of&nbsp;SymbolicExpression.<br>
+ops&nbsp;:&nbsp;List&nbsp;of&nbsp;Expression.<br>
 type&nbsp;:&nbsp;If&nbsp;type&nbsp;is&nbsp;not&nbsp;None,&nbsp;run&nbsp;RDotNet.SymbolicExpressionExtension.As***().<br>
-enToArray&nbsp;:&nbsp;if&nbsp;enToArray&nbsp;is&nbsp;True,&nbsp;run&nbsp;Vector.ToArray().<br>
-return&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
+enToArray&nbsp;:&nbsp;If&nbsp;enToArray&nbsp;is&nbsp;True,&nbsp;run&nbsp;Vector.ToArray().<br>
+return&nbsp;:&nbsp;The&nbsp;Expression.</tt></dd></dl>
  <dl><dt><a name="-runLength"><strong>runLength</strong></a>(var)</dt><dd><tt>Run&nbsp;Vector.Lengh.<br>
 &nbsp;<br>
-var&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
+var&nbsp;:&nbsp;The&nbsp;Expression.</tt></dd></dl>
  <dl><dt><a name="-runPrint"><strong>runPrint</strong></a>(var)</dt><dd><tt>Run&nbsp;print&nbsp;command.<br>
 &nbsp;<br>
-var&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
+var&nbsp;:&nbsp;The&nbsp;Expression.</tt></dd></dl>
  <dl><dt><a name="-runToArray"><strong>runToArray</strong></a>(var)</dt><dd><tt>Run&nbsp;Vector.ToArray().<br>
 &nbsp;<br>
-var&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
- <dl><dt><a name="-setSymbol"><strong>setSymbol</strong></a>(name, var)</dt><dd><tt>Assign&nbsp;a&nbsp;value&nbsp;to&nbsp;a&nbsp;name&nbsp;in&nbsp;the&nbsp;global&nbsp;environment.<br>
+var&nbsp;:&nbsp;The&nbsp;Expression.</tt></dd></dl>
+ <dl><dt><a name="-setSymbol"><strong>setSymbol</strong></a>(name, var)</dt><dd><tt>Assign&nbsp;the&nbsp;value&nbsp;to&nbsp;the&nbsp;name&nbsp;in&nbsp;the&nbsp;global&nbsp;environment.<br>
 &nbsp;<br>
 name&nbsp;:&nbsp;The&nbsp;name.<br>
-var&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
+var&nbsp;:&nbsp;The&nbsp;Expression.</tt></dd></dl>
  <dl><dt><a name="-showDoc"><strong>showDoc</strong></a>()</dt><dd><tt>Show&nbsp;the&nbsp;document&nbsp;of&nbsp;rdotnet&nbsp;package.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -131,12 +135,12 @@ var&nbsp;:&nbsp;The&nbsp;SymbolicExpression.</tt></dd></dl>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>Engine</strong> = &lt;RDotNet.REngine object at 0x000000000000006C [RDotNet.REngine]&gt;<br>
 <strong>IRONPYTHON_HOME</strong> = r'C:\Program Files\IronPython 2.7'<br>
-<strong>IRONPYTHON_RDOTNET</strong> = r'C:\Program Files\IronPython 2.7\Lib\rdotnet'<br>
+<strong>RDOTNET_PATH</strong> = r'C:\Program Files\IronPython 2.7\Lib\rdotnet'<br>
 <strong>RDotNet</strong> = &lt;module 'RDotNet' (CLS module from RDotNet, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null)&gt;<br>
 <strong>R_HOME</strong> = r'C:\Program Files\R\R-3.4.4'<br>
 <strong>__author__</strong> = 'Nishida Takehito &lt;takehito.nishida@gmail.com&gt;'<br>
-<strong>__date__</strong> = '2018/11/5'<br>
-<strong>__version__</strong> = '0.9.10.0'<br>
+<strong>__date__</strong> = '2018/11/7'<br>
+<strong>__version__</strong> = '0.9.11.0'<br>
 <strong>systemPath</strong> = ['.', r'C:\Program Files\IronPython 2.7\Lib', r'C:\Program Files\IronPython 2.7\DLLs', r'C:\Program Files\IronPython 2.7\Lib\site-packages', r'C:\Program Files\IronPython 2.7\Lib\rdotnet', r'C:\Program Files\R\R-3.4.4']</td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#7799ee">

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wk_rdotnet", "wk_rdotnet\wk_rdotnet.csproj", "{95DB570C-02D5-4185-88CF-0B465D26F39C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wk_rdotnet", "wk_rdotnet\wk_rdotnet.csproj", "{A589C332-0937-45F0-876E-22679A56E3A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{95DB570C-02D5-4185-88CF-0B465D26F39C}.Debug|x64.ActiveCfg = Debug|x64
-		{95DB570C-02D5-4185-88CF-0B465D26F39C}.Debug|x64.Build.0 = Debug|x64
-		{95DB570C-02D5-4185-88CF-0B465D26F39C}.Release|x64.ActiveCfg = Release|x64
-		{95DB570C-02D5-4185-88CF-0B465D26F39C}.Release|x64.Build.0 = Release|x64
+		{A589C332-0937-45F0-876E-22679A56E3A9}.Debug|x64.ActiveCfg = Debug|x64
+		{A589C332-0937-45F0-876E-22679A56E3A9}.Debug|x64.Build.0 = Debug|x64
+		{A589C332-0937-45F0-876E-22679A56E3A9}.Release|x64.ActiveCfg = Release|x64
+		{A589C332-0937-45F0-876E-22679A56E3A9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

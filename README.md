@@ -1,6 +1,6 @@
-# Example of R.Net (for 64bit)
+# Example of `R.Net` (for 64bit)
 
-Example of R.Net in Ironpython script.  
+Example of `R.Net` in Ironpython script.  
 The library of C# is used.
 
 ## File
@@ -9,16 +9,16 @@ The library of C# is used.
   * There are IronPython script files.
   * Run `example_wk_rdotnet.py`.
 * `wk_rdotnet.sln`
-  * To install R.NET.
+  * To install `R.NET`.
   * To generate `rdotnet` package.
 
 ## Notes on execution
 
 * Open `wk_rdotnet.sln`.
-* Install R.NET with NuGet.
+* Install `R.NET` with NuGet.
 * Build.
-  * What is needed is only the `__init__.py`, `rdotnet.html`, `DynamicInterop.dll`, `RDotNet.dll` and `RDotNet.NativeLibrary.dll`.
 * Copy the `x64/debug/rdotnet` or `x64/release/rdotnet` folder to IronPython's `Lib` folder.
+* Environment variable `IRONPYTHON_HOME` and `R_HOME` required. They are installation location.
 * Open `wk_rdotnet_ipy` folder with `Visual Studio Code` and run `example_wk_rdotnet.py`.
   * You need the `Python` extension created by Don Jayamanne.
   * Edit `python.pythonPath` in `settings.json` in the `.vscod` folder to the appropriate path. The following is a description for IronPython 2.7.8.

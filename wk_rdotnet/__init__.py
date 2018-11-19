@@ -10,14 +10,13 @@ https://www.nuget.org/packages/R.NET.Community/
 """
 
 __author__  = "Nishida Takehito <takehito.nishida@gmail.com>"
-__version__ = "0.9.11.0"
-__date__    = "2018/11/7"
+__version__ = "0.9.12.0"
+__date__    = "2018/11/19"
 
 #
 # Set path.
 #
 import os
-import clr
 import os.path as path
 from sys import path as systemPath
 from System import Environment as env
@@ -27,15 +26,25 @@ R_HOME = env.GetEnvironmentVariable("R_HOME")
 if IRONPYTHON_HOME is None or R_HOME is None:
     raise Exception("Error : Set path of R_HOME and IRONPYTHON_HOME.")
 
-RDOTNET_PATH = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
-systemPath.append(RDOTNET_PATH)
-systemPath.append(R_HOME)
-print("R : " + R_HOME)
-print("rdotnet : " + RDOTNET_PATH)
+IPY_LIB = path.join(IRONPYTHON_HOME, "Lib")
+IPY_DLLS = path.join(IRONPYTHON_HOME, "DLLs")
+IPY_RDOTNET = path.join(IRONPYTHON_HOME, "Lib\\rdotnet")
+
+_lstPath = []
+_lstPath.append(IPY_LIB)
+_lstPath.append(IPY_DLLS)
+_lstPath.append(IPY_RDOTNET)
+
+for i in _lstPath:
+    if os.path.exists(i):
+        systemPath.append(i)
+    else:
+        raise Exception("There is no '" + i + "'.")
 
 #
 # Add reference.
 #
+import clr
 clr.AddReferenceToFile("RDotNet.dll")
 import RDotNet
 from RDotNet import REngineExtension
@@ -71,7 +80,6 @@ def runPrint(var):
     
     var : The Expression.
     """
-    _r_print = SymbolicExpressionExtension.AsFunction(Engine.Evaluate("print"))
     runFunction(_r_print, [var])
 
 def runFunction(func, opt, type=None, enToArray=False):
@@ -116,7 +124,7 @@ def showDoc():
     Show the document of rdotnet package.
     """
     import webbrowser
-    webbrowser.open("file:///" + path.join(RDOTNET_PATH, "rdotnet.html"))
+    webbrowser.open("file:///" + path.join(IPY_RDOTNET, "rdotnet.html"))
 
 def getSymbol(name, type=None, enToArray=False):
     """

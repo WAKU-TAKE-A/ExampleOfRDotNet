@@ -25,7 +25,7 @@ def RunExample():
     #
     # Example of DataFrame.
     #
-    fn = path.join(r.IRONPYTHON_RDOTNET, 'example.csv')
+    fn = path.join(r.IPY_RDOTNET, 'example.csv')
     csv = r.evaluate("csv <- read.csv('" + fn.replace("\\", "/") + "', stringsAsFactors=F)", "dataframe")
     print("Name : ")
     print(list(csv["Name"]))

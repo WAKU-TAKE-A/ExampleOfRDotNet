@@ -73,12 +73,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="..\wk_rdotnet_ipy\example.csv">
-      <Link>example.csv</Link>
+    <None Include="example.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\wk_rdotnet_ipy\example.py">
-      <Link>example.py</Link>
+    <None Include="example.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Properties\Settings.settings">

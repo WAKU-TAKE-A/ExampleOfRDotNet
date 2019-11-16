@@ -19,10 +19,10 @@ The library of C# is used. Requires VisualStudio 2017 or higher.
 * Build.
 * Copy the "x64/debug/rdotnet" or "x64/release/rdotnet" folder to IronPython's "Lib" folder.
 * Environment variable "IRONPYTHON_HOME" and "R_HOME" required. They are installation location.
-* Open "wk_rdotnet_ipy" folder with Visual Studio Code and run "example.py".
-  * You need the Python extension created by Don Jayamanne.
-  * Edit "python.pythonPath" in "settings.json" in the ".vscod" folder to the appropriate path. The following is a description for IronPython 2.7.9.
+* "example.py" and "example.exe" are example program.
 
 ```
-"python.pythonPath": "C:/Program Files/IronPython 2.7/ipy.exe"
+import rdotnet
+import example
+example.RunExample()
 ```

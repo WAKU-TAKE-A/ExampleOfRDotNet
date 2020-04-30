@@ -26,3 +26,5 @@ import rdotnet
 import example
 example.RunExample()
 ```
+
+I have confirmed that it works with the combination of R-3.6.3 and R.NET 1.8.2.
